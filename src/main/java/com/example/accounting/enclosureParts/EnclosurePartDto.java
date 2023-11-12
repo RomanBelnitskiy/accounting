@@ -1,6 +1,6 @@
-package com.example.accounting.enclosurePart;
+package com.example.accounting.enclosureParts;
 
-import com.example.accounting.part.MeasurementUnit;
+import com.example.accounting.parts.MeasurementUnit;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

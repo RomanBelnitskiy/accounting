@@ -1,7 +1,7 @@
-package com.example.accounting.enclosurePart;
+package com.example.accounting.enclosureParts;
 
-import com.example.accounting.enclosure.Enclosure;
-import com.example.accounting.part.Part;
+import com.example.accounting.enclosures.Enclosure;
+import com.example.accounting.parts.Part;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

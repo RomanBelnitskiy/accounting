@@ -1,4 +1,4 @@
-package com.example.accounting.part;
+package com.example.accounting.parts;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

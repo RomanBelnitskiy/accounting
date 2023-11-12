@@ -1,4 +1,4 @@
-package com.example.accounting.enclosurePart;
+package com.example.accounting.enclosureParts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

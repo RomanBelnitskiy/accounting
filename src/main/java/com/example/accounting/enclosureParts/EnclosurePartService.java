@@ -1,7 +1,7 @@
-package com.example.accounting.enclosurePart;
+package com.example.accounting.enclosureParts;
 
-import com.example.accounting.enclosure.EnclosureRepository;
-import com.example.accounting.part.PartRepository;
+import com.example.accounting.enclosures.EnclosureRepository;
+import com.example.accounting.parts.PartRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +14,9 @@ public class EnclosurePartService {
     private final EnclosureRepository enclosureRepository;
     private final PartRepository partRepository;
 
-    public EnclosurePartService(EnclosurePartRepository repository, EnclosureRepository enclosureRepository, PartRepository partRepository) {
+    public EnclosurePartService(EnclosurePartRepository repository,
+                                EnclosureRepository enclosureRepository,
+                                PartRepository partRepository) {
         this.repository = repository;
         this.enclosureRepository = enclosureRepository;
         this.partRepository = partRepository;

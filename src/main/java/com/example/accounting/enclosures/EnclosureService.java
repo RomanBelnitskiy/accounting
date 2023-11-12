@@ -1,5 +1,7 @@
-package com.example.accounting.enclosure;
+package com.example.accounting.enclosures;
 
+import com.example.accounting.projects.Project;
+import com.example.accounting.projects.ProjectRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,9 +12,11 @@ import java.util.stream.Collectors;
 @Service
 public class EnclosureService {
     private final EnclosureRepository repository;
+    private final ProjectRepository projectRepository;
 
-    public EnclosureService(EnclosureRepository repository) {
+    public EnclosureService(EnclosureRepository repository, ProjectRepository projectRepository) {
         this.repository = repository;
+        this.projectRepository = projectRepository;
     }
 
     public List<EnclosureDto> findAll() {
@@ -22,10 +26,13 @@ public class EnclosureService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
     public EnclosureDto create(EnclosureDto enclosureDto) {
+        Project project = projectRepository.getReferenceById(enclosureDto.getProjectId());
         Enclosure enclosure = Enclosure.builder()
                 .name(enclosureDto.getName())
                 .qty(enclosureDto.getQty())
+                .project(project)
                 .build();
         return repository.save(enclosure).toDto();
     }

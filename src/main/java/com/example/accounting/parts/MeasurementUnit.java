@@ -1,4 +1,4 @@
-package com.example.accounting.part;
+package com.example.accounting.parts;
 
 public enum MeasurementUnit {
     SHT, M, M_KV
