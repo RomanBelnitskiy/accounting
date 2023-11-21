@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -32,8 +34,9 @@ public class EnclosurePart {
                 .name(part.getName())
                 .reference(part.getReference())
                 .qty(qty)
-                .price(part.getPrice())
                 .unit(part.getUnit())
+                .price(part.getPrice())
+                .total(part.getPrice().multiply(BigDecimal.valueOf(qty)))
                 .build();
     }
 }

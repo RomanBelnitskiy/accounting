@@ -19,8 +19,8 @@ public class EnclosureService {
         this.projectRepository = projectRepository;
     }
 
-    public List<EnclosureDto> findAll() {
-        return repository.findAll()
+    public List<EnclosureDto> findAll(Project project) {
+        return repository.findByProject(project)
                 .stream()
                 .map(Enclosure::toDto)
                 .collect(Collectors.toList());

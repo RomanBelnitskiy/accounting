@@ -1,5 +1,6 @@
 package com.example.accounting.enclosureParts;
 
+import com.example.accounting.enclosures.Enclosure;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,13 +15,14 @@ public class EnclosurePartController {
     }
 
     @GetMapping("/{enclosureId}/parts")
-    public List<EnclosurePartDto> findByEnclosure(@PathVariable Long enclosureId) {
-        return service.findAllByEnclosure(enclosureId);
+    public List<EnclosurePartDto> findByEnclosure(@PathVariable(name = "enclosureId") Enclosure enclosure) {
+        return service.findAllByEnclosure(enclosure);
     }
 
     @PostMapping("/{enclosureId}/parts")
-    public EnclosurePartDto create(@PathVariable Long enclosureId, @RequestBody NewEnclosurePartDto dto) {
-        return service.create(enclosureId, dto);
+    public EnclosurePartDto create(@PathVariable(name = "enclosureId") Enclosure enclosure,
+                                   @RequestBody NewEnclosurePartDto dto) {
+        return service.create(enclosure, dto);
     }
 
     @PutMapping("/{enclosureId}/parts")

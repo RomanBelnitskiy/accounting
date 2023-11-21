@@ -17,6 +17,7 @@ public class EnclosurePartDto {
     private String name;
     private String reference;
     private double qty;
-    private BigDecimal price;
     private MeasurementUnit unit;
+    private BigDecimal price;
+    private BigDecimal total;
 }

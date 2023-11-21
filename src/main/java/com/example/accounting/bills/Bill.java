@@ -31,4 +31,36 @@ public class Bill {
     private String target;
     private String equipment;
     private String comment;
+
+    public BillDto toDto() {
+        return BillDto.builder()
+                .id(id)
+                .supplier(supplier)
+                .number(number)
+                .date(date)
+                .paymentStatus(paymentStatus)
+                .noticed(noticed)
+                .shipmentStatus(shipmentStatus)
+                .waybill(waybill)
+                .target(target)
+                .equipment(equipment)
+                .comment(comment)
+                .build();
+    }
+
+    public static Bill toEntity(BillDto billDto) {
+        return Bill.builder()
+                .id(billDto.getId())
+                .supplier(billDto.getSupplier())
+                .number(billDto.getNumber())
+                .date(billDto.getDate())
+                .paymentStatus(billDto.getPaymentStatus())
+                .noticed(billDto.isNoticed())
+                .shipmentStatus(billDto.getShipmentStatus())
+                .waybill(billDto.getWaybill())
+                .target(billDto.getTarget())
+                .equipment(billDto.getEquipment())
+                .comment(billDto.getComment())
+                .build();
+    }
 }

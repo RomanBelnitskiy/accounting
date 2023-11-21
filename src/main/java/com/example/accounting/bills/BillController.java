@@ -15,18 +15,18 @@ public class BillController {
     }
 
     @GetMapping
-    public List<Bill> getAll() {
+    public List<BillDto> getAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Bill saveBill(@RequestBody Bill bill) {
-        return service.save(bill);
+    public BillDto saveBill(@RequestBody BillDto billDto) {
+        return service.save(billDto);
     }
 
     @PutMapping
-    public Bill update(@RequestBody Bill bill) {
-        return service.save(bill);
+    public BillDto update(@RequestBody BillDto billDto) {
+        return service.save(billDto);
     }
 
     @DeleteMapping("/{id}")

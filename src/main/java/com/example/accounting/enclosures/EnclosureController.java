@@ -1,5 +1,6 @@
 package com.example.accounting.enclosures;
 
+import com.example.accounting.projects.Project;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +14,9 @@ public class EnclosureController {
         this.service = service;
     }
 
-    @GetMapping
-    public List<EnclosureDto> findAll() {
-        return service.findAll();
+    @GetMapping("/{projectId}")
+    public List<EnclosureDto> findAll(@PathVariable(name = "projectId") Project project) {
+        return service.findAll(project);
     }
 
     @PostMapping
